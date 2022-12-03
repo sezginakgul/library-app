@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+}
+
+.bar {
+  cursor: pointer;
+}
+
+.bar::-webkit-scrollbar {
+  height: 15px;
+  visibility: visible;
+  background-color: gray;
+  border-radius: 30px;
+}
+.bar::-webkit-scrollbar-thumb {
+  width: 50px;
+  border-radius: 30px;
+  background-color: #198754;
+  /* border: 2px solid black; */
+}
+.title {
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+}
+
+.cards:hover .title {
+  visibility: visible;
+  transform: translateY(0);
+  background-color: #198754;
+  color: white;
+}
+.cards {
+  overflow: hidden;
+}
+
+.cards:hover {
+  cursor: pointer;
+}
+
+img {
+  transition: all ease-in-out 0.5s;
+}
+
+.cards:hover img {
+  transform: scale(1.05);
+}
