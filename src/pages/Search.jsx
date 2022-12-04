@@ -12,7 +12,6 @@ const Search = () => {
     (async () => {
       const API_KEY = process.env.REACT_APP_API_KEY;
       const URL = `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${API_KEY}`;
-
       try {
         const { data } = await axios(URL);
         setBooks(data.items);
