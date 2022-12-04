@@ -12,20 +12,11 @@ const Navbar = () => {
     if (!search) {
       toastGreenNotify("Search after entering a word");
     } else {
-      (async () => {
-        const API_KEY = process.env.REACT_APP_API_KEY;
-        const URL = `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${API_KEY}`;
-        try {
-          const { data } = await axios(URL);
-          localStorage.setItem("data", JSON.stringify(data.items));
-          navigate("/search");
-        } catch (error) {
-          console.log(error);
-        }
-      })();
+      navigate("/search", { state: search });
       setSearch("");
     }
   };
+
   return (
     <div className="container mb-3 px-0">
       <nav className="navbar navbar-expand-lg  navbar-dark bg-dark p-2">
